@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+	<Properties>
+		<Property name="filename">C:\tools\apache-tomcat-8.0.20\logs\rollingtest-$${sd:type}.log</Property>
+	</Properties>
+	<File name="Application" fileName="application.log" immediateFlush="false" append="false">
+	  <PatternLayout header="Runtime ${java:runtime} - VM ${java:vm} - OS ${java:os} - Locale ${java:locale} - Hardware ${java:hw}">
+		<Pattern>%d %m%n</Pattern>
+	  </PatternLayout>
+	</File>
+  <Appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+    </Console>
+  </Appenders>
+  <Loggers>
+	<!-- set package level to TRACE -->
+	<!-- 
+		additivity=false stops the msgs from being propagated to the parent logger (Console). Else 
+		messages will be duplicated.
+	-->
+	<Logger name="com.flexnet" level="TRACE" additivity="false">
+		<AppenderRef ref="Console"/>
+	</Logger>
+    <Root level="ERROR">
+      <AppenderRef ref="Console"/>
+    </Root>
+  </Loggers>
+</Configuration>
