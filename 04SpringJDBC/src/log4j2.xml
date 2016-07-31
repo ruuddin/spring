@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+	<Properties>
+		<Property name="filename">C:\tools\apache-tomcat-8.0.20\logs\rollingtest-$${sd:type}.log</Property>
+	</Properties>
+	
+	  <Appenders>
+	    <Console name="Console" target="SYSTEM_OUT">
+	      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+	    </Console>
+        <GELF name="gelfAppender" server="loggerqa.isys.intraware.com" port="12201" 
+        	hostName="SJ-LT-03266" additionalFields="foo=bar"/>
+		<File name="Application" fileName="C:\tools\apache-tomcat-8.0.20\logs\application.log" immediateFlush="false" append="false">
+		  <PatternLayout>
+			<Pattern>Runtime ${java:runtime} - VM ${java:vm} - OS ${java:os} - Locale ${java:locale} - Hardware ${java:hw} %d %m%n</Pattern>
+		  </PatternLayout>
+		</File>
+	  </Appenders>
+	  
+  <Loggers>
+	<!-- set package level to TRACE -->
+	<!-- 
+		additivity=false stops the msgs from being propagated to the parent logger (Console). Else 
+		messages will be duplicated.
+	-->
+	<Logger name="com.flexnet" level="TRACE" additivity="false">
+		<AppenderRef ref="Console"/>
+	</Logger>
+    <Root level="ERROR">
+      <AppenderRef ref="Console"/>
+      <AppenderRef ref="gelfAppender"/>
+    </Root>
+  </Loggers>
+</Configuration>
