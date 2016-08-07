@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       	http://www.springframework.org/schema/beans/spring-beans.xsd
+       	http://www.springframework.org/schema/rabbit
+       	http://www.springframework.org/schema/rabbit/spring-rabbit.xsd">
+
+	<!-- In a clustered mode, use addresses="host1:port1, host2:port2" instead of host and port attributes -->
+    <rabbit:connection-factory id="connectionFactory" channel-cache-size="50" cache-mode="CONNECTION" 
+    	host="localhost" port="5672" username="guest" password="guest"/>
+
+    <rabbit:template id="amqpTemplate" connection-factory="connectionFactory"/>
+
+	<!-- By default looks for beans of type queue, exchange, binding and declares them to the broker -->
+    <rabbit:admin connection-factory="connectionFactory"/>
+
+    <rabbit:queue name="sample-queue"/>
+</beans>

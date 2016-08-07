@@ -1,0 +1,1 @@
+Rabbit and Spring configuration using rabbitmq-config.xml
