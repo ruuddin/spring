@@ -1,0 +1,13 @@
+JUnit
+	- TrackingService.java: @Test, @Before, @After, @BeforeClass, @AfterClass, @Ignore, @Test(expected = Exception.class), @Test(timeout = 100)
+		- Hamcrest core matchers: is(), allOf(), instanceof ...
+		- @Rule with expected exceptions, timeout. TODO: try more rules
+	- ProtenTrackerSuite: @Suite
+	- GoodTestsCategory.java: Classify tests into different categories. Example longRunningTests vs normalRunningTests.
+		- Create interface GoodTestsCategory
+		- Assign categories to test @Category
+		- Create Suite GoodTestsSuite and mentioned the categories to include (@IncludeCategory) or exclude (@ExcludeCategory). Only Categories for tests mentioned in the @Suite are run.
+	- ParameterizedTests.java
+	- Theories: TrackingServiceTheory.java
+	- ConsoleRunner.java: Run tests from a standalone Java application.
+	- Ant: right-click project -> export -> ant build file.
