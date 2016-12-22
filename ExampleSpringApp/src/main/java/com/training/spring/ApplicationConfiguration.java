@@ -42,7 +42,7 @@ import com.caching.ContactCacheWriterFactory;
 
 @Configuration
 @EnableAspectJAutoProxy
-@ComponentScan({ "com.caching", "com.example", "com.training" })
+@ComponentScan({ "com.caching", "com.training", "com.spring" })
 @EnableJpaRepositories(basePackages="com.training")
 @EnableMBeanExport
 @EnableTransactionManagement

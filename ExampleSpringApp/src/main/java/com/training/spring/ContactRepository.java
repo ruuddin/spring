@@ -6,7 +6,6 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.data.repository.query.Param;
 
-@NoRepositoryBean
 public interface ContactRepository extends CrudRepository<Contact, Integer>{
     
     @Query("delete from Contact c where c.id IN :keys")

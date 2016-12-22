@@ -33,7 +33,6 @@ public class CassandraConfig {
         
         //c.getConfiguration().getPoolingOptions(); //Get pooling options at runtime.
         
-        
         JsonCodec<Person> myJsonCodec = new JsonCodec<Person>(Person.class);
         CodecRegistry myCodecRegistry = c.getConfiguration().getCodecRegistry();
         myCodecRegistry.register(myJsonCodec);
