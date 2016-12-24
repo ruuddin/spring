@@ -95,7 +95,7 @@ public class CassandraService {
         // Option 2: Using the Query Builder
         BuiltStatement insertStmt = QueryBuilder.insertInto("t").value("id", 42).value("json", p);
         session.execute(insertStmt);
-        
+        System.out.println("Save success");
         /*
          * Option 3
          * 
@@ -104,6 +104,19 @@ public class CassandraService {
         BoundStatement bs1 = ps.bind(42, p); // or alternatively...
         BoundStatement bs2 = ps.bind().setInt(0, 42).set(1, p, Person.class);
         */
+    }
+    
+    public void getPerson_Ex4(){
+        ResultSet rs = session.execute("SELECT * from t");
+        Row row = rs.one();
+        
+        // Let the driver convert the string for you...
+        Person p = row.get(1, Person.class);
+        System.out.println(p);
+        
+        // ... or retrieve the raw string if you need it
+        String json = row.get(1, String.class); // row.getString(1) would have worked too
+        System.out.println(json);
     }
 
     /**

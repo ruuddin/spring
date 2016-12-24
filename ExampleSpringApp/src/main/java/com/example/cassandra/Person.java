@@ -6,7 +6,11 @@ import java.time.LocalDate;
 public class Person {
 
     private String name;
+    
     private LocalDate date;
+    
+    public Person(){
+    }
 
     public Person(
             String name, LocalDate date){
@@ -28,5 +32,10 @@ public class Person {
 
     public void setDate(LocalDate date) {
         this.date = date;
+    }
+
+    @Override
+    public String toString() {
+        return "Person [name=" + name + ", date=" + date + "]";
     }
 }

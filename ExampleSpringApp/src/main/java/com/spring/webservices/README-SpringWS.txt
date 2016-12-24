@@ -6,6 +6,7 @@ http://docs.spring.io/spring-ws/docs/2.4.0.RELEASE/reference/htmlsingle/#what-is
 - XML api support: XML messages can be handled by JAXP API such as DOM, SAX, StaX, JDOM, dom4j, XOM
 - WS-Security: sign SOAP messages, encrypt and decrypt them or authenticate them.
 
+Add @EnableWs to SpringWebServiceConfig.java
 Add package to component scan in ApplicationConfiguration
 Add MessageDispatcherServlet in web.xml
 Add transformWsdlLocations context init param in web.xml

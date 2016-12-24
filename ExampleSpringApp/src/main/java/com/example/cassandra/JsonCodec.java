@@ -4,21 +4,26 @@ package com.example.cassandra;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 
+import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
+
 import com.datastax.driver.core.DataType;
 import com.datastax.driver.core.ProtocolVersion;
 import com.datastax.driver.core.TypeCodec;
 import com.datastax.driver.core.exceptions.InvalidTypeException;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.type.TypeFactory;
+import com.fasterxml.jackson.datatype.jsr310.JSR310Module;
 
 /**
  * A simple Json codec.
  */
 public class JsonCodec<T> extends TypeCodec<T> {
 
-    private final ObjectMapper objectMapper = new ObjectMapper();
+    private final ObjectMapper objectMapper = jsonObjectMapper();
 
     public JsonCodec(
             Class<T> javaType){
@@ -88,5 +93,11 @@ public class JsonCodec<T> extends TypeCodec<T> {
     protected JavaType toJacksonJavaType() {
         return TypeFactory.defaultInstance().constructType(getJavaType().getType());
     }
-
+    
+    private ObjectMapper jsonObjectMapper() {
+        return Jackson2ObjectMapperBuilder.json()
+                .serializationInclusion(JsonInclude.Include.NON_NULL) // Don’t include null values
+                .featuresToDisable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS) // ISODate
+                .modules(new JSR310Module()).build();
+    }
 }

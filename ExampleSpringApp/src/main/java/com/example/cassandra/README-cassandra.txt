@@ -1,3 +1,7 @@
+Download Cassandra
+Start Cassandra bin\cassandra.bat
+start cqlsh: bin\cqlsh.bat
+
 http://docs.datastax.com/en/developer/java-driver/3.1/manual/
 CassandraConfig
 	- Cluster is main entry point of the driver. Thread-safe. Create a single instance per target Cassandra cluster, and share it throughtout the application.

@@ -17,6 +17,7 @@ public class CassandraMainApplication {
             cs.getReleaseVersion_Ex1();
             cs.asyncRequest_Ex2();
             cs.savePerson_Ex3();
+            cs.getPerson_Ex4();
         }
         catch (Exception e) {
             e.printStackTrace();
