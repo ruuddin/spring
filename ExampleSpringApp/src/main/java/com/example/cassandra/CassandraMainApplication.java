@@ -14,10 +14,13 @@ public class CassandraMainApplication {
 
         try {
             CassandraService cs = ac.getBean(CassandraService.class);
-            cs.getReleaseVersion_Ex1();
-            cs.asyncRequest_Ex2();
-            cs.savePerson_Ex3();
-            cs.getPerson_Ex4();
+            cs.exGetReleaseVersion();
+            cs.ex2AsyncRequest();
+            cs.ex3SavePerson();
+            cs.ex4GetPerson();
+            
+            cs.ex5MappingManagerSaveAndGet();
+            cs.ex6Accessor();
         }
         catch (Exception e) {
             e.printStackTrace();
