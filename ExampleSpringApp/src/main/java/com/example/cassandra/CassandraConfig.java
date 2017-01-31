@@ -36,6 +36,7 @@ public class CassandraConfig {
                 .addContactPoints(InetAddress.getByName(env.getProperty("cassandra.contactpoints")))
                 .withPoolingOptions(pooling).build();
         c.register(queryLogger);
+        c.getConfiguration().getQueryOptions().setFetchSize(2000);
         // c.getConfiguration().getPoolingOptions(); //Get pooling options at runtime.
 
         JsonCodec<Person> jsonCodec = new JsonCodec<Person>(Person.class);

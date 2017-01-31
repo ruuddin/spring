@@ -24,6 +24,13 @@ CassandraConfig
 	- Custom codecs allow mapping from CQL types to Java types (See JsonCodec.java)
 		- codecs should be thread-safe, fast and never block.
 		- Register custom codecs using CodecRegistry. Once registered, it cannot be overridden/deregistered, can only add new ones.
+	- Fetch size - default is 5000. It is poosible that cassandra may return more or less rows. It depends.
+		at cluster: cluster.getConfiguration().getQueryOptions().setFetchSize(2000);
+		at statement: statement.setFetchSize(2000); - Takes precedence
+		ResultSet iteration: By default, the background fetch happens at the last moment, when there are no more “local” rows available.
+			for finer control, the ResultSet interface provides the following methods:
+				getAvailableWithoutFetching() and isFullyFetched() to check the current state;
+				fetchMoreResults() to force a page fetch.
 
 **************		
 Object mapper: helps converting domain classes to and from query results. The mapper is in a separate artifact cassandra-driver-mapping
