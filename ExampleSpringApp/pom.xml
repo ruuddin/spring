@@ -3,8 +3,13 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>ExampleSpringApp</groupId>
 	<artifactId>ExampleSpringApp</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<version>1.0</version>
+	<packaging>pom</packaging>
+	
+	<modules>
+		<module>kafka</module>
+	</modules>
+	
 	<build>
 		<sourceDirectory>src/main/java</sourceDirectory>
 		<testSourceDirectory>testsrc/main/java</testSourceDirectory>
