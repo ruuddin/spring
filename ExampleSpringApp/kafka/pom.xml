@@ -9,7 +9,6 @@
 	
 	<groupId>com.example</groupId>
 	<artifactId>kafka</artifactId>
-	<version>1.0</version>
 	
 	<dependencies>
 
