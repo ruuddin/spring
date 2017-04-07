@@ -23,4 +23,14 @@
 		<servlet-name>AsyncServlet</servlet-name>
 		<url-pattern>/asyncservlet</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AsyncServlet2</servlet-name>
+		<servlet-class>com.example.servlet.AsyncServlet2</servlet-class>
+		<async-supported>true</async-supported>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AsyncServlet2</servlet-name>
+		<url-pattern>/asyncservlet2</url-pattern>
+	</servlet-mapping>
 </web-app>
