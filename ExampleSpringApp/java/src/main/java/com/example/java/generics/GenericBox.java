@@ -1,11 +1,26 @@
 package com.example.java.generics;
 
+import java.io.Serializable;
+
 public class GenericBox<T> {
 
     private T t;
     
     public void set(T t) {this.t = t;}
     public T get() { return t;}
+    
+    public <U extends N, N> void calculateA(U u){
+        System.out.println(u);
+    }
+    
+    public <U extends Number> void calculateB(U u){
+        System.out.println(u.byteValue());
+    }
+    
+    public <U extends Number & Serializable & Runnable> void multipleBounds(U u){
+        System.out.println(u.byteValue());
+        u.run();
+    }
     
     /**
      * Generic method example
