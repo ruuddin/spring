@@ -1,5 +1,5 @@
 
-package com.example.concurrency;
+package com.example.java.concurrency;
 
 /**
  * Steps to safely implement Producer and Consumer

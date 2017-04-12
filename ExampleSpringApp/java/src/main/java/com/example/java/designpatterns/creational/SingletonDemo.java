@@ -1,5 +1,5 @@
 
-package com.example.designpatterns.creational;
+package com.example.java.designpatterns.creational;
 
 public class SingletonDemo {
 

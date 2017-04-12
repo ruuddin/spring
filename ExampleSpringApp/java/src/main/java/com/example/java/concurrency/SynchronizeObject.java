@@ -1,4 +1,4 @@
-package com.example.concurrency;
+package com.example.java.concurrency;
 
 public class SynchronizeObject {
     private final Object key = new Object();
