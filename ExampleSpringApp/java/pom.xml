@@ -3,12 +3,12 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>ExampleSpringApp</groupId>
-    <artifactId>ExampleSpringApp</artifactId>
-    <version>1.0</version>
-  </parent>
+		<groupId>com.example</groupId>
+		<artifactId>parentapp</artifactId>
+		<version>1.0</version>
+	</parent>
   
-  <groupId>com.example</groupId>
+  <groupId>com.example.java</groupId>
   <artifactId>java</artifactId>
   <name>java</name>
   <url>http://maven.apache.org</url>
