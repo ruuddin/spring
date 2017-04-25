@@ -39,9 +39,9 @@ public class ProducerConsumer {
     static class Consumer {
         void consume() {
             synchronized (lock) {
-                if (isEmpty(buffer)) {
+                if (isEmpty()) {
                     try {
-                        lock.wait();
+                        lock.wait(); // wait suspends the thread and releases the lock
                     }
                     catch (InterruptedException e) {
                         e.printStackTrace();
@@ -58,7 +58,7 @@ public class ProducerConsumer {
         return count == buffer.length;
     }
 
-    private static boolean isEmpty(int[] buffer) {
+    private static boolean isEmpty() {
         return count == 0;
     }
 
