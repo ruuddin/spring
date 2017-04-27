@@ -5,6 +5,8 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 public class ExecutorsExample01 {
@@ -12,6 +14,17 @@ public class ExecutorsExample01 {
     public static void main(String[] args) throws Exception {
         executor();
         callableAndFuture();
+        scheduledExecutor();
+    }
+    
+    private static void scheduledExecutor() throws Exception {
+        ScheduledExecutorService ses = Executors.newScheduledThreadPool(1);
+        Runnable task = () -> System.out.println("Scheduling: " + System.nanoTime());
+        ScheduledFuture<?> f = ses.schedule(task, 3, TimeUnit.SECONDS);
+        
+        TimeUnit.MILLISECONDS.sleep(1337);
+        long remainingDelay = f.getDelay(TimeUnit.MILLISECONDS);
+        System.out.printf("Remaining Delay: %sms", remainingDelay);
     }
 
     private static void executor() {

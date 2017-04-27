@@ -1,7 +1,7 @@
 package com.algorithms.lists;
 
-import com.algorthms.LinkedList;
-import com.algorthms.LinkedList.Node;
+import com.algorthms.MyLinkedList;
+import com.algorthms.Node;
 
 /**
  * Given a number n and a list, partition the list such that:
@@ -17,8 +17,8 @@ public class PartitionList {
         if (head == null)
             return null;
         
-        LinkedList smallerNumbers = new LinkedList(); 
-        LinkedList bigNumbers = new LinkedList();
+        MyLinkedList smallerNumbers = new MyLinkedList(); 
+        MyLinkedList bigNumbers = new MyLinkedList();
         Node newNode = null;
         
         Node node = head;
