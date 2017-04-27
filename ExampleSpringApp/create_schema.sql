@@ -1,2 +1,0 @@
-create table ADDRESS (id int not null, city varchar(255), postcode varchar(255), street varchar(255), primary key (id))
-create table CONTACT (id int not null, dob datetime, name varchar(255), phone varchar(255), primary key (id))

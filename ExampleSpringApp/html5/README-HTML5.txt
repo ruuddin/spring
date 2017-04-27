@@ -1,1 +1,0 @@
-Containers: Elements which are specific about the content it is describing. Helps search engines index the pages efficiently.
