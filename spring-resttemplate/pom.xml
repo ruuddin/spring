@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.springframework</groupId>
-	<artifactId>spring-jdbc</artifactId>
+	<artifactId>spring-resttemplate</artifactId>
 	<version>0.1.0</version>
 
 	<parent>
@@ -15,47 +15,14 @@
 
 	<dependencies>
 		<dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jdbc</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-        </dependency>
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<version>3.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-collections4</artifactId>
-			<version>4.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<!-- Actuator - For health check, auditing etc. Endpoints include: environment, 
-			health, beans, info, metrics, trace, configprops, and dump. -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-		<!-- Hot swapping -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-		</dependency>
+        	    <groupId>org.springframework.boot</groupId>
+            	    <artifactId>spring-boot-starter-jdbc</artifactId>
+	        </dependency>
 	</dependencies>
 
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
-
-
 	<build>
 		<plugins>
 			<plugin>
