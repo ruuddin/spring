@@ -1,0 +1,12 @@
+management:
+  security:
+    enabled: false
+spring:
+  profiles: dev
+server:
+  port: 8000
+--- # <==== 3 hyphens to separate the profiles dev and test
+spring:
+  profiles: test
+server:
+  port: 9000
