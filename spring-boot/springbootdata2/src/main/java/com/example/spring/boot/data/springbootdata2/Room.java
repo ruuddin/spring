@@ -1,10 +1,24 @@
-package com.example.spring.boot.rest.springbootrest;
+package com.example.spring.boot.data.springbootdata2;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="ROOM")
 public class Room {
 
+    @Id
+    @Column(name="ROOM_ID")
+    @GeneratedValue
     private long id;
+    @Column(name="BED_INFO")
     private String type;
+    @Column(name="ROOM_NUMBER")
     private String number;
+    @Column(name="NAME")
     private String name;
 
     public Room(long id, String type, String number, String name) {

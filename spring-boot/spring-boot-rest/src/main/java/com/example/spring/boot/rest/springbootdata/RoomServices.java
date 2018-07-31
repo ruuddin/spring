@@ -1,6 +1,5 @@
-package com.example.spring.boot.rest.springbootrest;
+package com.example.spring.boot.rest.springbootdata;
 
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

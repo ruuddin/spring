@@ -1,4 +1,4 @@
-package com.example.spring.boot.rest.springbootrest;
+package com.example.spring.boot.rest.springbootdata;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
